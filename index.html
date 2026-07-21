@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RiskBrief — The Homepage for Cybersecurity Professionals</title>
+
+    <meta
+        name="description"
+        content="Practical cybersecurity knowledge, trending CVEs, security cheat sheets and career resources for cybersecurity professionals."
+    >
+
+    <meta property="og:title" content="RiskBrief — The Homepage for Cybersecurity Professionals">
+    <meta
+        property="og:description"
+        content="Practical cybersecurity knowledge, trending CVEs, security cheat sheets and career resources for cybersecurity professionals."
+    >
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="RiskBrief — The Homepage for Cybersecurity Professionals">
+    <meta
+        name="twitter:description"
+        content="Practical cybersecurity knowledge, trending CVEs, security cheat sheets and career resources for cybersecurity professionals."
+    >
+
+    <meta name="theme-color" content="#070a0f">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Decorative background -->
+    <div class="site-background" aria-hidden="true">
+        <div class="background-grid"></div>
+        <div class="background-glow glow-one"></div>
+        <div class="background-glow glow-two"></div>
+    </div>
+
+    <!-- =========================
+         HEADER / NAVIGATION
+    ========================== -->
+    <header class="site-header" id="home">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="#home" class="brand" aria-label="RiskBrief home">
+                <span class="brand-mark" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                </span>
+
+                <span class="brand-text">
+                    Risk<span>Brief</span>
+                </span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navigation-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navigation-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#cves" class="nav-link">CVEs</a>
+                <a href="#cheatsheets" class="nav-link">Cheat Sheets</a>
+                <a href="#career" class="nav-link">Career</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+        <section class="hero section">
+            <div class="hero-decoration hero-decoration-left" aria-hidden="true"></div>
+            <div class="hero-decoration hero-decoration-right" aria-hidden="true"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Cybersecurity Knowledge Hub
+                </div>
+
+                <h1>
+                    The Homepage for
+                    <span class="gradient-text">Cybersecurity Professionals</span>
+                </h1>
+
+                <p class="hero-tagline">
+                    Learn. <span>Detect.</span> Defend.
+                </p>
+
+                <p class="hero-description">
+                    Practical cybersecurity knowledge without the noise.
+                    Stay current with important vulnerabilities, access useful
+                    security references, and build skills that matter in the real world.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#cves" class="button button-primary">
+                        Explore Trending CVEs
+
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+
+                    <a href="#cheatsheets" class="button button-secondary">
+                        View Cheat Sheets
+                    </a>
+                </div>
+
+                <div class="hero-status" aria-label="RiskBrief core resources">
+
+                    <div class="status-item">
+                        <span class="status-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3l8 4v5c0 5-3.4 8.4-8 9.8C7.4 20.4 4 17 4 12V7l8-4z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </span>
+
+                        <div>
+                            <strong>Threat Watch</strong>
+                            <span>Important vulnerabilities</span>
+                        </div>
+                    </div>
+
+                    <div class="status-divider"></div>
+
+                    <div class="status-item">
+                        <span class="status-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M5 4h14v16H5z"/>
+                                <path d="M8 8h8M8 12h8M8 16h5"/>
+                            </svg>
+                        </span>
+
+                        <div>
+                            <strong>Quick Reference</strong>
+                            <span>Practical cheat sheets</span>
+                        </div>
+                    </div>
+
+                    <div class="status-divider"></div>
+
+                    <div class="status-item">
+                        <span class="status-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 19V9l8-5 8 5v10"/>
+                                <path d="M8 19v-6h8v6"/>
+                            </svg>
+                        </span>
+
+                        <div>
+                            <strong>Career</strong>
+                            <span>Build practical skills</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             TRENDING CVEs
+        ========================== -->
+        <section class="section section-surface" id="cves">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Threat Watch</span>
+
+                    <h2>Trending CVEs This Week</h2>
+
+                    <p>
+                        Five vulnerabilities security professionals should have
+                        on their radar this week.
+                    </p>
+                </div>
+
+                <div class="cve-grid">
+
+                    <article class="cve-card">
+                        <div class="cve-card-top">
+                            <span class="cve-id">CVE-2026-XXXXX</span>
+                            <span class="severity severity-critical">
+                                <span></span>
+                                Critical
+                            </span>
+                        </div>
+
+                        <div class="cvss">
+                            <span>CVSS</span>
+                            <strong>9.8</strong>
+                        </div>
+
+                        <h3>Remote Code Execution Vulnerability</h3>
+
+                        <p>
+                            A critical vulnerability affecting enterprise systems
+                            that could allow remote code execution.
+                        </p>
+
+                        <a href="#" class="card-link" aria-label="View details for placeholder CVE">
+                            View Details
+                            <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <article class="cve-card">
+                        <div class="cve-card-top">
+                            <span class="cve-id">CVE-2026-XXXXX</span>
+                            <span class="severity severity-critical">
+                                <span></span>
+                                Critical
+                            </span>
+                        </div>
+
+                        <div class="cvss">
+                            <span>CVSS</span>
+                            <strong>9.6</strong>
+                        </div>
+
+                        <h3>Authentication Bypass Vulnerability</h3>
+
+                        <p>
+                            A critical authentication flaw that could allow
+                            unauthorized access to affected systems.
+                        </p>
+
+                        <a href="#" class="card-link" aria-label="View details for placeholder CVE">
+                            View Details
+                            <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <article class="cve-card">
+                        <div class="cve-card-top">
+                            <span class="cve-id">CVE-2026-XXXXX</span>
+                            <span class="severity severity-high">
+                                <span></span>
+                                High
+                            </span>
+                        </div>
+
+                        <div class="cvss">
+                            <span>CVSS</span>
+                            <strong>8.8</strong>
+                        </div>
+
+                        <h3>Privilege Escalation Vulnerability</h3>
+
+                        <p>
+                            A high-severity flaw that could enable authenticated
+                            attackers to gain elevated privileges.
+                        </p>
+
+                        <a href="#" class="card-link" aria-label="View details for placeholder CVE">
+                            View Details
+                            <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <article class="cve-card">
+                        <div class="cve-card-top">
+                            <span class="cve-id">CVE-2026-XXXXX</span>
+                            <span class="severity severity-high">
+                                <span></span>
+                                High
+                            </span>
+                        </div>
+
+                        <div class="cvss">
+                            <span>CVSS</span>
+                            <strong>8.4</strong>
+                        </div>
+
+                        <h3>Security Control Bypass</h3>
+
+                        <p>
+                            A vulnerability that could allow attackers to bypass
+                            important security restrictions under specific conditions.
+                        </p>
+
+                        <a href="#" class="card-link" aria-label="View details for placeholder CVE">
+                            View Details
+                            <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <article class="cve-card">
+                        <div class="cve-card-top">
+                            <span class="cve-id">CVE-2026-XXXXX</span>
+                            <span class="severity severity-high">
+                                <span></span>
+                                High
+                            </span>
+                        </div>
+
+                        <div class="cvss">
+                            <span>CVSS</span>
+                            <strong>8.1</strong>
+                        </div>
+
+                        <h3>Sensitive Information Exposure</h3>
+
+                        <p>
+                            A high-severity weakness that may expose sensitive
+                            information to unauthorized users.
+                        </p>
+
+                        <a href="#" class="card-link" aria-label="View details for placeholder CVE">
+                            View Details
+                            <span>→</span>
+                        </a>
+                    </article>
+
+                </div>
+
+                <p class="placeholder-note">
+                    <span>i</span>
+                    CVE entries are placeholders for Version 1 and will be replaced
+                    with manually curated vulnerability information.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             CHEAT SHEETS
+        ========================== -->
+        <section class="section" id="cheatsheets">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Quick Reference</span>
+
+                    <h2>Cybersecurity Cheat Sheets</h2>
+
+                    <p>
+                        Practical commands and references you can use when you need them.
+                    </p>
+                </div>
+
+                <div class="resource-grid">
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                <path d="M7 9l3 3-3 3M12 15h5"/>
+                            </svg>
+                        </div>
+
+                        <div class="resource-content">
+                            <span class="resource-type">Command Reference</span>
+
+                            <h3>Linux Commands</h3>
+
+                            <p>
+                                Essential Linux commands for security analysts,
+                                system administrators and penetration testers.
+                            </p>
+                        </div>
+
+                        <a href="#" class="card-link">
+                            Explore Linux Commands
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <path d="M12 4v16M4 12h16"/>
+                            </svg>
+                        </div>
+
+                        <div class="resource-content">
+                            <span class="resource-type">SOC Reference</span>
+
+                            <h3>Windows Event IDs</h3>
+
+                            <p>
+                                Important Windows Security Event IDs for SOC monitoring,
+                                threat hunting and incident investigation.
+                            </p>
+                        </div>
+
+                        <a href="#" class="card-link">
+                            Explore Event IDs
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="8"/>
+                                <circle cx="12" cy="12" r="2"/>
+                                <path d="M12 4v3M12 17v3M4 12h3M17 12h3"/>
+                            </svg>
+                        </div>
+
+                        <div class="resource-content">
+                            <span class="resource-type">Network Reference</span>
+
+                            <h3>Nmap Commands</h3>
+
+                            <p>
+                                Practical Nmap commands for host discovery, port scanning,
+                                service enumeration and security testing.
+                            </p>
+                        </div>
+
+                        <a href="#" class="card-link">
+                            Explore Nmap Commands
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             CAREER
+        ========================== -->
+        <section class="section section-surface" id="career">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Career</span>
+
+                    <h2>Build Your Cybersecurity Career</h2>
+
+                    <p>
+                        Practical learning paths and interview preparation
+                        for cybersecurity professionals.
+                    </p>
+                </div>
+
+                <div class="career-grid">
+
+                    <article class="career-card">
+
+                        <div class="career-card-header">
+                            <span class="career-number">01</span>
+                            <span class="career-category">Blue Team</span>
+                        </div>
+
+                        <h3>SOC Analyst Roadmap</h3>
+
+                        <p>
+                            A practical learning path covering networking,
+                            operating systems, SIEM, incident response,
+                            MITRE ATT&amp;CK and threat detection.
+                        </p>
+
+                        <div class="topic-tags">
+                            <span>SIEM</span>
+                            <span>Detection</span>
+                            <span>IR</span>
+                        </div>
+
+                        <a href="#" class="card-link">
+                            View SOC Roadmap
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="career-card">
+
+                        <div class="career-card-header">
+                            <span class="career-number">02</span>
+                            <span class="career-category">Offensive Security</span>
+                        </div>
+
+                        <h3>Ethical Hacker Roadmap</h3>
+
+                        <p>
+                            Build practical skills across networking, Linux,
+                            web security, enumeration and penetration testing.
+                        </p>
+
+                        <div class="topic-tags">
+                            <span>Linux</span>
+                            <span>Web</span>
+                            <span>Pentesting</span>
+                        </div>
+
+                        <a href="#" class="card-link">
+                            View Ethical Hacker Roadmap
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="career-card">
+
+                        <div class="career-card-header">
+                            <span class="career-number">03</span>
+                            <span class="career-category">Interview Preparation</span>
+                        </div>
+
+                        <h3>Cybersecurity Interview Questions</h3>
+
+                        <p>
+                            Practice cybersecurity interview questions covering
+                            networking, Linux, SIEM, web security and security fundamentals.
+                        </p>
+
+                        <div class="topic-tags">
+                            <span>Networking</span>
+                            <span>Security</span>
+                            <span>SIEM</span>
+                        </div>
+
+                        <a href="#" class="card-link">
+                            Start Preparing
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+        <section class="section about-section" id="about">
+            <div class="container">
+
+                <div class="about-wrapper">
+
+                    <div class="about-heading">
+                        <span class="section-label">About RiskBrief</span>
+                        <h2>What is RiskBrief?</h2>
+                    </div>
+
+                    <div class="about-content">
+
+                        <p>
+                            RiskBrief is being built as a practical cybersecurity
+                            knowledge hub for security professionals and learners.
+                        </p>
+
+                        <div class="about-goal">
+                            <span>Our goal is simple:</span>
+                            <strong>
+                                Cut through the noise and make useful cybersecurity
+                                knowledge easier to discover.
+                            </strong>
+                        </div>
+
+                        <p>
+                            For now, RiskBrief focuses on important vulnerabilities,
+                            practical cheat sheets and cybersecurity career resources.
+                        </p>
+
+                        <p>
+                            More practical security resources will be added as
+                            the platform grows.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+                    <a href="#home" class="brand" aria-label="RiskBrief home">
+                        <span class="brand-mark" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                        </span>
+
+                        <span class="brand-text">
+                            Risk<span>Brief</span>
+                        </span>
+                    </a>
+
+                    <p>Learn. Detect. Defend.</p>
+
+                    <span>Built for the cybersecurity community.</span>
+
+                </div>
+
+                <nav class="footer-navigation" aria-label="Footer navigation">
+                    <a href="#cves">CVEs</a>
+                    <a href="#cheatsheets">Cheat Sheets</a>
+                    <a href="#career">Career</a>
+                    <a href="#about">About</a>
+                </nav>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 RiskBrief. All rights reserved.</p>
+
+                <p>
+                    Practical security knowledge.
+                    <span>Without the noise.</span>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
