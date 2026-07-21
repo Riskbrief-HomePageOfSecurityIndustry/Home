@@ -1,11 +1,12 @@
 /*
  * RiskBrief
- * Version 1
+ * Minimal Vanilla JavaScript
  *
- * Minimal JavaScript:
+ * Features:
  * - Mobile navigation
  * - Navbar scroll state
  * - Active navigation section
+ * - Placeholder link handling
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,70 +17,97 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".nav-link");
 
     /*
-     * Mobile navigation
+     * Mobile Menu
      */
+
     function openMenu() {
+
+        if (!menuToggle || !navMenu) {
+            return;
+        }
+
         navMenu.classList.add("open");
         menuToggle.classList.add("active");
 
         menuToggle.setAttribute("aria-expanded", "true");
-        menuToggle.setAttribute("aria-label", "Close navigation menu");
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
 
         document.body.classList.add("menu-open");
     }
 
+
     function closeMenu() {
+
+        if (!menuToggle || !navMenu) {
+            return;
+        }
+
         navMenu.classList.remove("open");
         menuToggle.classList.remove("active");
 
         menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
 
         document.body.classList.remove("menu-open");
     }
 
-    function toggleMenu() {
-        const isOpen = navMenu.classList.contains("open");
 
-        if (isOpen) {
+    function toggleMenu() {
+
+        if (!navMenu) {
+            return;
+        }
+
+        if (navMenu.classList.contains("open")) {
             closeMenu();
         } else {
             openMenu();
         }
     }
 
-    if (menuToggle && navMenu) {
+
+    if (menuToggle) {
         menuToggle.addEventListener("click", toggleMenu);
     }
 
 
     /*
-     * Close mobile navigation after clicking a link
+     * Close mobile menu when navigation link is clicked
      */
+
     navLinks.forEach((link) => {
+
         link.addEventListener("click", () => {
             closeMenu();
         });
+
     });
 
 
     /*
-     * Close navigation when clicking outside it
+     * Close menu when clicking outside
      */
+
     document.addEventListener("click", (event) => {
 
-        if (!navMenu || !menuToggle) {
+        if (!menuToggle || !navMenu) {
             return;
         }
 
-        const clickedInsideMenu = navMenu.contains(event.target);
+        if (!navMenu.classList.contains("open")) {
+            return;
+        }
+
+        const clickedMenu = navMenu.contains(event.target);
         const clickedToggle = menuToggle.contains(event.target);
 
-        if (
-            navMenu.classList.contains("open") &&
-            !clickedInsideMenu &&
-            !clickedToggle
-        ) {
+        if (!clickedMenu && !clickedToggle) {
             closeMenu();
         }
 
@@ -87,8 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-     * Close menu when Escape is pressed
+     * Escape closes mobile menu
      */
+
     document.addEventListener("keydown", (event) => {
 
         if (
@@ -104,8 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-     * Reset mobile menu if viewport changes to desktop
+     * Reset menu when switching to desktop
      */
+
     window.addEventListener("resize", () => {
 
         if (window.innerWidth > 760) {
@@ -116,32 +146,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-     * Navbar scroll appearance
+     * Navbar scroll styling
      */
-    function updateHeader() {
+
+    function updateNavbar() {
 
         if (!header) {
             return;
         }
 
-        if (window.scrollY > 20) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-
+        header.classList.toggle(
+            "scrolled",
+            window.scrollY > 20
+        );
     }
 
-    updateHeader();
 
-    window.addEventListener("scroll", updateHeader, {
-        passive: true
-    });
+    updateNavbar();
+
+    window.addEventListener(
+        "scroll",
+        updateNavbar,
+        { passive: true }
+    );
 
 
     /*
-     * Active navigation link
+     * Active navigation
      */
+
     const sections = [
         document.querySelector("#home"),
         document.querySelector("#cves"),
@@ -153,52 +186,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateActiveNavigation() {
 
-        const scrollPosition = window.scrollY + 180;
+        const position = window.scrollY + 180;
 
         let currentSection = "home";
 
         sections.forEach((section) => {
 
-            if (scrollPosition >= section.offsetTop) {
+            if (position >= section.offsetTop) {
                 currentSection = section.id;
             }
 
         });
 
+
         navLinks.forEach((link) => {
 
-            const href = link.getAttribute("href");
+            const target = link.getAttribute("href");
 
             link.classList.toggle(
                 "active",
-                href === `#${currentSection}`
+                target === `#${currentSection}`
             );
 
         });
 
     }
 
+
     updateActiveNavigation();
 
-    window.addEventListener("scroll", updateActiveNavigation, {
-        passive: true
-    });
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
+    );
 
 
     /*
-     * Prevent placeholder resource links from jumping
-     * back to the top of the page.
+     * Placeholder links
      *
-     * These can later be replaced with real pages.
+     * These links will later point to real RiskBrief pages.
      */
-    const placeholderLinks = document.querySelectorAll(
-        '.card-link[href="#"]'
-    );
+
+    const placeholderLinks =
+        document.querySelectorAll(".placeholder-link");
 
     placeholderLinks.forEach((link) => {
 
         link.addEventListener("click", (event) => {
-            event.preventDefault();
+
+            if (link.getAttribute("href") === "#") {
+                event.preventDefault();
+            }
+
         });
 
     });
